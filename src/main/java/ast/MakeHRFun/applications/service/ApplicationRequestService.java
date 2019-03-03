@@ -2,7 +2,6 @@ package ast.MakeHRFun.applications.service;
 
 import ast.MakeHRFun.applications.model.Application;
 import ast.MakeHRFun.applications.repository.ApplicationRepository;
-import ast.MakeHRFun.offers.model.Offer;
 import ast.MakeHRFun.offers.service.OfferRequestService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
