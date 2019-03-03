@@ -48,13 +48,6 @@ public class ApplicationController {
         }
     }
 
-    private Example exampleByOfferId(@RequestParam("offerId") Long offerId) {
-        Application application = new Application();
-        application.setRelatedOffer(new Offer());
-        application.getRelatedOffer().setId(offerId);
-        return Example.of(application);
-    }
-
     //-------- Request
 
     public Application apply(Offer offer, String candidateEmail, String resumeText) {
