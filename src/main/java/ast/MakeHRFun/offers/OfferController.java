@@ -46,9 +46,8 @@ public class OfferController {
 
     @PostMapping("/{offerId}/apply")
     public Application apply(@PathVariable(value="offerId") Long offerId,
-                                     @RequestParam(value="candidateEmail") String candidateEmail,
-                                     @RequestParam(value="resumeText") String resumeText) {
-        return requestService.applyForOffer(offerId, candidateEmail, resumeText);
+                             @RequestBody Application application) {
+        return requestService.applyForOffer(offerId, application);
     }
 
 

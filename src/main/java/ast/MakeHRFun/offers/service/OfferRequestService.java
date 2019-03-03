@@ -5,9 +5,6 @@ import ast.MakeHRFun.applications.repository.ApplicationRepository;
 import ast.MakeHRFun.offers.model.Offer;
 import ast.MakeHRFun.offers.repository.OfferRepository;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
 public class OfferRequestService {
@@ -22,16 +19,17 @@ public class OfferRequestService {
         this.applicationRepository = applicationRepository;
     }
 
-    public Offer createOffer(@RequestBody Offer offer) {
+    public Offer createOffer(Offer offer) {
         return repository.save(offer);
     }
 
-    public Application applyForOffer(@PathVariable("offerId") Long offerId, @RequestParam("candidateEmail") String candidateEmail, @RequestParam("resumeText") String resumeText) {
+    public Application applyForOffer(Long offerId, Application application) {
         Offer offer = repository.findById(offerId).orElseThrow(() -> new RuntimeException("Offer with id "+offerId+" not found"));
         offer.setNumberOfActiveApplications(offer.getNumberOfActiveApplications() + 1);
         repository.save(offer);
 
-        Application application = new Application(offer, candidateEmail, resumeText);
+        application.setRelatedOffer(offer);
+        application.setApplicationStatus(Application.Status.APPLIED);
         return applicationRepository.save(application);
     }
 

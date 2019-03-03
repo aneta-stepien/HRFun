@@ -41,10 +41,6 @@ public class ApplicationController {
 
     //-------- Request
 
-    public Application apply(Offer offer, String candidateEmail, String resumeText) {
-        return requestService.applyForOffer(offer, candidateEmail, resumeText);
-    }
-
     @PostMapping("/{id}/invite")
     public Application invite(@PathVariable(value="id") Long id) {
         return requestService.inviteCandidate(id);

@@ -23,12 +23,6 @@ public class ApplicationRequestService {
         this.offerRequestService = offerRequestService;
     }
 
-    public Application applyForOffer(Offer offer, String candidateEmail, String resumeText) {
-        Application application = new Application(offer, candidateEmail, resumeText);
-        logger.info("New application for offer "+offer.getId());
-        return repository.save(application);
-    }
-
     public Application inviteCandidate(@PathVariable("id") Long id) {
         logger.info("Inviting candidate based on application "+id);
 
