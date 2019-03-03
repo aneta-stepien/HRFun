@@ -4,6 +4,7 @@ import ast.MakeHRFun.applications.ApplicationController;
 import ast.MakeHRFun.applications.ApplicationRepository;
 import ast.MakeHRFun.applications.model.Application;
 import ast.MakeHRFun.offers.model.Offer;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -35,9 +36,8 @@ public class OfferController {
 
     //-------- Request
 
-    @PutMapping()
-    public Offer create(@RequestParam(value="jobTitle") String jobTitle, @RequestParam(value="startDate") Date startDate) {
-        Offer offer = new Offer(jobTitle, startDate);
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Offer create(@RequestBody Offer offer) {
         return repository.save(offer);
     }
 
