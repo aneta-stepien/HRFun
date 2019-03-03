@@ -1,9 +1,7 @@
 package ast.MakeHRFun.offers;
 
-import ast.MakeHRFun.applications.repository.ApplicationRepository;
 import ast.MakeHRFun.applications.model.Application;
 import ast.MakeHRFun.offers.model.Offer;
-import ast.MakeHRFun.offers.repository.OfferRepository;
 import ast.MakeHRFun.offers.service.OfferQueryService;
 import ast.MakeHRFun.offers.service.OfferRequestService;
 import org.springframework.http.MediaType;

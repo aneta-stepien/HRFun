@@ -3,7 +3,6 @@ package ast.MakeHRFun.applications;
 import ast.MakeHRFun.applications.model.Application;
 import ast.MakeHRFun.applications.service.ApplicationQueryService;
 import ast.MakeHRFun.applications.service.ApplicationRequestService;
-import ast.MakeHRFun.offers.model.Offer;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
