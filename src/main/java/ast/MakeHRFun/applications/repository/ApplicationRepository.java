@@ -1,4 +1,4 @@
-package ast.MakeHRFun.applications;
+package ast.MakeHRFun.applications.repository;
 
 import ast.MakeHRFun.applications.model.Application;
 import org.springframework.data.jpa.repository.JpaRepository;
